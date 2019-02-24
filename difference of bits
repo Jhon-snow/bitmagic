@@ -1,0 +1,7 @@
+while(a!=0 || b!=0){
+	            if((a&1)!=(b&1))
+	            c++;
+	            a>>=1;      //difference of set bits between two numberws 
+	            b>>=1;
+	        }
+	        System.out.println(c);

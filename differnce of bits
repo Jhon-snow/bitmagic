@@ -1,0 +1,41 @@
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int t = sc.nextInt();
+	    StringBuffer sb = new StringBuffer();
+		for(int i = 0; i < t; i++)
+		{
+		    int n = sc.nextInt();
+		    int ans = 0;
+		    int[] arr = new int[n];
+		    
+		    for(int k = 0; k < n; k++)
+		    {
+		        arr[k] = sc.nextInt();
+		    }
+		    
+		    for(int k = 0; k < 32; k++)
+		    {
+		        int count = 0;
+		        for(int j = 0; j < n; j++)
+    		    {
+    		        if((arr[j] & (1 << k)) == 0)
+    		        {
+    		            count++;
+    		        }
+    		    }
+    		    
+    		    ans += (count * (n - count) * 2);
+		    }
+		    
+		    sb.append((int)(ans % (Math.pow(10,9) + 7)) + "\n");
+		}
+		
+		System.out.print(sb.toString());
+	}
+}

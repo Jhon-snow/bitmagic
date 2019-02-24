@@ -1,0 +1,22 @@
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	 //code
+	 Scanner scan=new Scanner(System.in);
+      int t=scan.nextInt();
+      while(t-->0){
+          int x=scan.nextInt();
+          int l=scan.nextInt();
+          int r=scan.nextInt();
+          int y=scan.nextInt();
+          for(int i=l-1;i<=r;i++){
+              if(((1&(x>>i))==0) & ((1&(y>>i))==1))
+                x^=(1<<i);
+          }
+          System.out.println(x);
+      }
+	 }
+}

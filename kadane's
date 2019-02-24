@@ -1,0 +1,34 @@
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	 //code
+	 Scanner scan=new Scanner(System.in);
+	 int t=scan.nextInt();
+	 while(t-->0){
+	     int n=scan.nextInt();
+	     int arr[]=new int[n];
+	     for(int i=0;i<n;i++)
+	        arr[i]=scan.nextInt();
+	        int count=0;
+	        for(int i=0;i<n;i++)
+	            if(arr[i]==1)
+	                count++;
+	       int cmin=arr[0];                               //kadane's to find minimum no of flips of 0 to make longest subarray of 1
+	       int min=arr[0];
+	       for(int i=1;i<n;i++){
+	           if(arr[i]==0)
+	           arr[i]=-1;
+	           cmin=Math.min(arr[i],cmin+arr[i]);
+	           if(min>cmin)
+	            min=cmin;
+	       }
+	       if(min==arr[0])
+	        System.out.println(count);
+	        else
+	       System.out.println(Math.abs(min)+count);
+	 }
+	 }
+}
